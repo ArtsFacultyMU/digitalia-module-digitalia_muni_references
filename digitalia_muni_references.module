@@ -63,7 +63,26 @@ function digitalia_muni_references_node_presave(\Drupal\Core\Entity\EntityInterf
 function digitalia_muni_references_lookup(\Drupal\Core\Entity\EntityInterface $entity) {
   $content_types = array('references_test', 'article', 'book', 'chapter');
   if (in_array($entity->getType(), $content_types)) {
-    \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': Searching for missing DOIs');
+
+    \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': Searching for missing DOIs...');
+
+    $host = 'localhost';
+    $port = 5000;
+    $waitTimeoutInSeconds = 1;
+    if(!$fp = fsockopen($host,$port,$errCode,$errStr,$waitTimeoutInSeconds)){
+      $subject = 'Application for DOI lookup is not running.';
+      \Drupal::logger('digitalia_muni_references')->warning($subject);
+
+      $to = \Drupal::config('system.site')->get('mail');
+      $mailManager = \Drupal::service('plugin.manager.mail');
+      $params = [
+        'subject' => t($subject),
+        'body' => t(''),
+      ];
+      $mailManager->mail('digitalia_muni_references', 'doi_app_not_running', $to, 'en', $params);
+      return;
+    }
+    fclose($fp);
 
     setlocale(LC_CTYPE, "en_US.UTF-8");
 
@@ -71,6 +90,7 @@ function digitalia_muni_references_lookup(\Drupal\Core\Entity\EntityInterface $e
     $ref_string = $entity->get('field_references')->value;
 
     if (empty($ref_string)) {
+      \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': Finished lookup.');
       return;
     }
 
@@ -86,21 +106,11 @@ function digitalia_muni_references_lookup(\Drupal\Core\Entity\EntityInterface $e
 
     $ref_string = implode("\n\n",$ref_array_numbered);
 
-
     // create new temporary text file
     $tmp_filename = tempnam("/tmp", "dkff_ref");    
     $tmp_file = fopen($tmp_filename, "w") or die("Cannot open file");
     fwrite($tmp_file, $ref_string);
     fclose($tmp_file);
-
-    $host = 'localhost'; 
-    $port = 5000; 
-    $waitTimeoutInSeconds = 1; 
-    if(!$fp = fsockopen($host,$port,$errCode,$errStr,$waitTimeoutInSeconds)){   
-      \Drupal::logger('digitalia_muni_references')->warning('Application for DOI lookup is not running.');
-      return;
-    } 
-    fclose($fp);
 
     // call DOI service and decode result JSON
     $command = escapeshellcmd('python3 /home/islandora/bachelor-thesis/client.py -t_doi '.$tmp_filename);
@@ -126,8 +136,17 @@ function digitalia_muni_references_lookup(\Drupal\Core\Entity\EntityInterface $e
         \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': Added DOI '.$doi.' for '.$line);
       }
     }
-
+    \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': Finished lookup.');
     $result_text = implode("\n\n", $ref_array);
     $entity->set('field_references', $result_text);    
+  }
+}
+
+function digitalia_muni_references_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'doi_app_not_running':
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
   }
 }
