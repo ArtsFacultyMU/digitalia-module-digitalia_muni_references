@@ -1,0 +1,5 @@
+name: 'digitalia_muni_references'
+type: module
+description: 'DOI lookup for references.'
+package: custom
+core_version_requirement: ^10 || ^11

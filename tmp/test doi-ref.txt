@@ -1,0 +1,123 @@
+[1] ADLER, A., A. GUJAR, B. L. HARRISON, K. O'HARA a A. SELLEN (§§1998§§). //A Diary Study of Work-Related Reading: Design Implications for Digital Reading Devices//. In CHI '98: Proceedings of the SIGCHI Conference on Human Factors in Computing Systems, Los Angeles, California, USA, April 18-23, 1998, 241–248. DOI 10.1145/274644.274679. | doi:10.1145/274644.274679
+
+[2] AGOSTI, M., G. BONFIGLIO-DOSIO a N. FERRO (§§2007§§). //A historical and contemporary study on annotations to derive key features for systems design//. International Journal on Digital Libraries. 8(1): 1-19. DOI s00799-007-0010-0. | doi:10.1007/s00799-007-0010-0
+
+[3] ALBRECHTSEN, H., PEJTERSEN, A. M. a B., CLEAL (§§2002§§). //Empirical work analysis of collaborative film indexing//. In BRUCE, H., FIDEL, R., INGWERSEN, P. a P. VAKKARI. Emerging frameworks and methods. Proceedings of 4th International Conference on Conceptions of Library and Information Science (CoLIS4). Greenwood Village: Libraries Unlimited.
+
+[4] BAUER, M. a A. ZIRKER (§§2017§§). //Explanatory Annotation of Literary Texts and the Reader: Seven Types of Problems//. International Journal of Humanities & Arts Computing: A Journal of Digital Humanities. 11(2): 212-232. DOI 10.3366/ijhac.2017.0193. | doi:10.3366/ijhac.2017.0193
+
+[5] BLAIR, A. M. (§§2010§§a). //Too Much to Know//. New Haven and London: Yale University Press.
+
+[6] BLAIR, A. M. (§§2010§§b). //The Rise of Note-Taking in early Modern Europe//. Intellectual History Review. 20(3): 303-316. DOI 10.1080/17496977.2010.492611. | doi:10.1080/17496977.2010.492611
+
+[7] BOCH, F. a A. PIOLAT (§§2005§§). //Note taking and learning: A summary of research//. Writing Across the Curriculum.16: 101–113. DOI 10.1002/acp.1086. | doi:10.1002/acp.1086
+
+[8] BONNER, J. M. a W. G. HOLLIDAY (§§2006§§). //How college science students engage in note‐taking strategies//. Journal of Research in Science Teaching. 43(8): 786-818. DOI 10.1002/tea.20115. | doi:10.1002/tea.20115
+
+[9] BUSH, V. (§§1945§§). //As we may think//. The Atlantic monthly. 176(1): 101–108. Dostupné z: https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/.
+
+[10] CALLISON, D. (§§2003§§). //Note-taking: Different Notes for Different Research Stages//. School Library Media Activities Monthly. 19(7): 33-37+.
+
+[11] CARTER, J. F. a N. H. Van MATRE (§§1975§§). //Note Taking Versus Note Having//. Journal of Educational Psychology. 67(6): 900-904. | doi:10.1037/0022-0663.67.6.900
+
+[12] CRAWFORD, C. C. (§§1925§§a). //Some Experimental Studies of the Results of College Note-Taking//. The Journal of Educational Research. 12(5): 379-386. Dostupné z: https://www.jstor.org/stable/27523191. | doi:10.1080/00220671.1925.10879612
+
+[13] CRAWFORD, C. C. (§§1925§§b). //The Correlation between College Lecture Notes and Quiz Papers//. The Journal of Educational Research. 12(4): 282-291. Dostupné z: https://www.jstor.org/stable/27523171. | doi:10.1080/00220671.1925.10879600
+
+[14] ČSN ISO 214 (§§2001§§) //Dokumentace – Abstrakty pro publikace a dokumentaci//. Praha: Český normalizační institut.
+
+[15] FIDEL, R. (§§2012§§). //Human information interaction: An ecological approach to information behavior//. Cambridge, Mass.: MIT Press.
+
+[16] FIDEL, R. a A. M. PEJTERSEN (§§2004§§). //From information behaviour research to the design of information systems: the Cognitive Work Analysis framework//. Information Research. 10(1). Dostupné z: http://InformationR.net/ir/10-1/paper210.html.
+
+[17] FIDEL, R., BRUCE, H., PEJTERSEN, A. M., DUMAIS, S., GRUDIN, J. a S. POLTROCK (§§2000§§). //Collaborative Information Retrieval (CIR)//. New Review of Information Behaviour Research. 1: 235-247.
+
+[18] FROMMHOLZ, I. et al. (§§2003§§). //Document-Centered Collaboration for Scholars in the Humanities – The COLLATE System//. In: KOCH, T. and I.T. SøLVBERG (Eds.). Research and Advanced Technology for Digital Libraries. ECDL 2003. Lecture Notes in Computer Science, vol. 2769. Berlin, Heidelberg: Springer. DOI 10.1007/978-3-540-45175-4_40. | doi:10.1007/978-3-540-45175-4_40
+
+[19] HANDSCHUH, S. a S. STAAB (Eds.) (§§2003§§). //Annotation for the Semantic Web//. Amsterdam: IOS Press.
+
+[20] HUNTER, J. (§§2009§§). //Collaborative Semantic Tgging and Annotation Systems//. Annual Review of Information Science and Technology. 43: 1-84. DOI 10.1002/aris.2009.1440430111. | doi:10.1002/aris.2009.1440430111
+
+[21] HYLAND, K. (§§2004§§). //Disciplinary Discourses: Social Interactions in Academic Writing//. Ann Arbor: The University of Michigan Press.
+
+[22] CHI, M.T.H. (§§1997§§). //Quantifying Qualitative Analyses of Verbal Data: A Practical Guide//. Journal of the Learning Sciences. 6(3): 271-315. DOI: 10.1207/s15327809jls0603_1. | doi:10.1207/s15327809jls0603_1
+
+[23] CHIARCOS, Ch., FATH, Ch. a F. ABROMEIT (§§2020§§). //Annotation Interoperability for the Post-ISOCat Era//. In Proceedings of the 12th Conference on Language Resources and Evaluation (LREC 2020)//. Marseille: European Language Resources Association, 5668–5677. IDE, N. (2007). Annotation Science: From Theory to Practice and Use. In REHM, G., A. WITT,
+
+[24] LEMNITZER, L. (Eds). //Data Structures for Linguistic Resources and Applications//. Tübingen: Gunter Narr Verlag. Dostupný z: http://www.cs.vassar.edu/~ide/papers/GLDV.pdf.
+
+[25] JACKSON, H. J. (§§2001§§). //Marginalia: readers writing in books//. New Haven and London: Yale University Press.
+
+[26] JACKSON, H. J. (§§2005§§). //Romantic Readers: The Evidence of Marginalia//. New Haven and London: Yale University Press.
+
+[27] KAPTELININ, V. a B. A. NARDI (§§2009§§). //Acting with Technology: Activity Theory and Interaction Design//. Cambridge: The MIT Press.
+
+[28] KATOPOL, P. F. (§§2006§§). //We don't do that here: Using cognitive work analysis to learn about organizational culture//. Bulletin of the American Society for Information Science and Technology. 33(1), 9-11. DOI 10.1002/bult.2006.1720330104. | doi:10.1002/bult.2006.1720330104
+
+[29] KHAN, F. (§§1993§§). //A Survey of Note-Taking Practices//. Technical Report, Hewlett-Packard Laboratories. Dostupné z: https://www.hpl.hp.com/techreports/93/HPL-93-107.pdf
+
+[30] KIEWRA, K. A. (§§1988§§). //Cognitive Aspects of Autonomous Note Taking: Control Processes, Learning Strategies, and Prior Knowledge//. Educational Psychologist. 23(1): 39-56. DOI 10.1207/s15326985ep2301_3. | doi:10.1207/s15326985ep2301_3
+
+[31] KIEWRA, K. A. (§§1985§§). //Investigating Notetaking a Review: A Depth of Processing Alternative//. Educational Psychologist. 20(1): 23-32. DOI 10.1207/s15326985ep2001_4. | doi:10.1207/s15326985ep2001_4
+
+[32] KOOLEN, C., A. GARNETT a R. SIEMENS (§§2012§§). //Electronic Environment for Reading: An Annotated Bibliography of Pertinent Hardware and Software//. Scholarly and Research Communication. 3(4). DOI 10.22230/src.2012v3n4a71. | doi:10.22230/src.2012v3n4a71
+
+[33] LEONT'JEV, A. N. (§§1978§§). //Činnost, vědomí, osobnost//. Praha: Svoboda.
+
+[34] LEWIS, Ch. T. a Ch. SHORT (§§1879§§). //A Latin Dictionary//, Oxford: Clarendon Press.
+
+[35] LIN, M., W. G. LUTTERS a T. S. KIM (§§2004§§). //Understanding the Micronote Lifecycle: Improving Mobile Support for Informal Note Taking//. CHI '04: Proceedings of the SIGCHI Conference on Human Factors in Computing Systems, Vienna, Austria, April 24–29, 2004. S. 687–694. DOI: 10.1145/985692.985779. | doi:10.1145/985692.985779
+
+[36] LINTERN, G. (§§2013§§). //Cognitive Work Analysis// [online]. Cognitive Systems Design net [Cit. 2021-01-05]. Dostupný z: http://www.cognitivesystemsdesign.net/Tutorials/CWA%20Tutorial.pdf
+
+[37] LUO, L., D. WEST a G. MARCHIONINI (§§2008§§). //Annotations of Interlibrary Loan Process: The Transition from Analog to Electronic//. Document Delivery & Electronic Reserve, 18(3): 307-324. DOI 10.1080/10723030802186298. | doi:10.1080/10723030802186298
+
+[38] MARCHIONINI, G. (§§2010§§). //Information Concepts: From Books to Cyberspace Identities//. San Rafael: Morgan and Claypool.
+
+[39] MARSHALL, C. C. (§§1997§§). //Annotation: from paper books to the digital library//. In: DL 1997: Proc. ACM International conference on Digital libraries. New York. ACM Press: 131–140.
+
+[40] MARSHALL, C. C. (§§1998§§). //Toward an ecology of hypertext annotation//. In: AKSCYN, R. (Ed.) Proc. ACM Conference on Hypertext and Hypermedia: links, objects, time and space—structure in hypermedia systems. New York. ACM Press: 40–49.
+
+[41] MARSHALL, C. C. (§§2009§§). //Reading and writing the electronic book//. San Rafael: Morgan and Claypool.
+
+[42] McCLELLAND, S. I. (§§2016§§). //Speaking back from the margins: Participant marginalia in survey and interview research//. Qualitative Psychology. 3(2): 159-165. DOI 10.1037/qup0000061 | doi:10.1037/qup0000061
+
+[43] PALMER, C.L. a M. H. CRAGIN (§§2008§§). //Scholarship and Disciplinary Practices//. Annual Review of Information Science and Technology. 42(1): 163-212. DOI 10.1002/aris.2008.1440420112. | doi:10.1002/aris.2008.1440420112
+
+[44] PALMER, C.L., L.C. TEFFEAU a C.M. PIRMANN (§§2009§§). //Scholarly Information Practices in the Online Environment: Themes from the Literature and Implications for Library Service Development//. Dublin, Ohio: OCLC Research. Dostupné z: www.oclc.org/programs/publications/reports/2009-02.pdf.
+
+[45] PEARSON, J., G. BUCHANAN a H. THIMBLEBY (§§2014§§). //Designing for Digital Reading//. [San Rafael]: Morgan and Claypool.
+
+[46] PEJTERSEN, A. M. (§§1989§§). //The Bookhouse: Modelling Users' Needs and Search Strategies as a Basis for System Design//. Roskilde: Risø National Laboratory.
+
+[47] PHELPS, T. A. a R. WILENSKY (§§1997§§). //Multivalent Annotations//. In: Peters C. a C. Thanos (Eds). Research and Advanced Technology for Digital Libraries. ECDL 1997. Lecture Notes in Computer Science, vol. 1324. Springer, Berlin, Heidelberg. DOI 10.1007/BFb0026734. | doi:10.1007/BFb0026734
+
+[48] PIOLAT, A., T. OLIVE a R. T. KELLOGG (§§2005§§). //Cognitive Effort during Note Taking//. Applied Cognitive Psychology. 19(3): 291-312. DOI: 10.1002/acp.1086. | doi:10.1002/acp.1086
+
+[49] PONCE, H. R., a R. E. MAYER (§§2014§§). //Qualitatively different cognitive processing during online reading primed by different study activities//. Computers in Human Behavior, 30: 121–130. DOI 10.1016/j.chb.2013.07.054. | doi:10.1016/j.chb.2013.07.054
+
+[50] RUVANE, M. B. (§§2006§§a). //Annotation as Process: A vital Information Seeking//. Proceedings of the American Society for Information Science and Technology. 42(1): 506-522. DOI: 10.1002/meet.14504201178. | doi:10.1002/meet.14504201178
+
+[51] RUVANE, M. B. (§§2006§§b). //Defining Annotations: a visual (re)interpretation//. Procedings of the American Society for Information Science and Technology. 43(1): 1– 5. DOI 10.1002/meet.14504301226. | doi:10.1002/meet.14504301226
+
+[52] RENEAR, A., S. DeROSE, E. MYLONAS a A. van DAM (§§1999§§). //An Outline for a Functional Taxonomy of Annotation//. White Paper presented at Microsoft Research (Redmond, WA). Dostupupné z: http://hdl.handle.net/2142/9098.
+
+[53] ROMAT, H., PIETRIGA, E., HENRY-RICHE, N., HINCKLEY, K. a APPERT, C. (§§2019§§). //SpaceInk: Making Space for In-Context Annotations//. In Proceedings of the 32nd Annual ACM Symposium on User Interface Software and Technology (UIST '19). New York: Association for Computing Machinery, 871-882. DOI 10.1145/3332165.3347934. | doi:10.1145/3332165.3347934
+
+[54] SAVOLAINEN, R. (§§2008§§). //Everyday Information Practices: A Social Phenomenological Perspective//. Lanham, Maryland: The Scarecrow Press.
+
+[55] SCHATZKI, T. R. (§§2001§§). //Introduction: Practice Theory//. In T. R. SCHATZKI, K. Knorr CETINA a E. Von SAVIGNY (Eds.), The Practice Turn in Contemporary Theory. London and New York: Routledge, 10-23.
+
+[56] SCHILIT, B. N., GOLOVCHINSKY, G. a PRICE, M. N. (§§1998§§). //Beyond Paper: Supporting Active Reading with Free Form Digital Ink Annotations//. In CHI '98: Proceedings of the SIGCHI Conference on Human Factors in Computing Systems. New York: Association for Computing Machinery, 249-256. DOI 10.1145/274644.274680. | doi:10.1145/274644.274680
+
+[57] TASHMAN, C. a EDWARDS, W. K. (§§2011§§). //LiquidText: A flexible, multitouch environment to support active reading//. In CHI '11: Proceedings of the SIGCHI Conference on Human Factors in Computing Systems. New York: Association for Computing Machinery, 3285–3294. DOI 10.1145/1978942.1979430. | doi:10.1145/1978942.1979430
+
+[58] TOON, T. E. (§§1991§§). //Dry-Point Annotations in Early English Manuscripts: Understanding Texts and Establishing Contexts//. In BARNEY, S. A. (Ed.). Annotation and Its Texts. New York and Oxford: Oxford University Press, 74-93.
+
+[59] TRICKETT, S. B. a TRAFTON, J. G. (§§2009§§). //A primer on verbal protocol analysis//. In D. SCHMORROW, D., COHN, J. a D. NICHOLSON (Eds.). The PSI handbook of virtual environments for training and education: developments for the military and beyond. Westport: Praeger Security International, pp. 332–346.
+
+[60] UNSWORTH, J. (§§2000§§). //Scholarly Primitives: what methods do humanities researchers have in common, and how might our tools reflect this?// Symposium on Humanities Computing: formal methods, experimental practice sponsored by King's College, London, 13 May 2000. http://www.iath.virginia.edu/~jmu2m/Kings.5-00/primitives.html.
+
+[61] VICENTE, K. J. (§§1999§§). //Cognitive Work Analysis: Toward Safe, Productive, and Healthy ComputerBased Work//. Mahwah: Lawrence Erlbaum Associates.
+
+[62] WINGET, M. A. (§§2008§§). //Annotations on Musical Scores by Performing Musicians: Collaborative Models, Interactive Mothods, and Music Digital Library Tool Development//. Journal of the American Society for Information Science and Technology, 59(12): 1878-1897. DOI 10.1002/asi.20876. | doi:10.1002/asi.20876

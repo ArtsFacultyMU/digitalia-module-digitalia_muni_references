@@ -1,0 +1,133 @@
+<?php
+
+use Drupal\Core\File;
+use Drupal\Core\Messenger;
+
+/**
+ * @file
+ * Primary module hooks for digitalia_muni_references module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+function digitalia_muni_references_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $forms = ['node_article_edit_form', 'node_article_form', 'node_chapter_edit_form', 'node_chapter_form', 'node_book_form', 'node_book_edit_form'];
+  if (in_array($form_id, $forms)) {
+    $form['digitalia_muni_references_set'] = [
+      '#type' => 'fieldset',
+      '#access' => TRUE,
+      '#title' => t('References'),
+      '#weight' => 100,
+    ];
+
+    $form['digitalia_muni_references_set']['digitalia_muni_references'] = array(
+     '#type' => 'checkbox',
+     '#title' => t('DOI lookup'),
+     '#weight' => 100,
+    );
+
+    $form['actions']['submit']['#submit'][] = 'digitalia_muni_references_submit';
+  }
+}
+
+function digitalia_muni_references_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+
+  if ($form_state->getFormObject() instanceof \Drupal\node\NodeForm) {
+    $content_types = array('references_test', 'article', 'book', 'chapter');
+    $entity = $form_state->getFormObject()->getEntity();
+
+    if (in_array($entity->getType(), $content_types)) {
+      if ($form['digitalia_muni_references_set']['digitalia_muni_references']['#value'] == 1) {
+        digitalia_muni_references_lookup($entity);
+      }
+    }
+  }
+}
+
+function digitalia_muni_references_node_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+  $content_types = array('references_test', 'article', 'book', 'chapter');
+  if (in_array($entity->getType(), $content_types)) {
+    if ($entity->isPublished()) {
+
+      if ($entity->original and $entity->original->isPublished()) {
+        return;
+      }
+
+      digitalia_muni_references_lookup($entity);
+    }
+  }
+}
+
+function digitalia_muni_references_lookup(\Drupal\Core\Entity\EntityInterface $entity) {
+  $content_types = array('references_test', 'article', 'book', 'chapter');
+  if (in_array($entity->getType(), $content_types)) {
+    \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': Searching for missing DOIs');
+
+    setlocale(LC_CTYPE, "en_US.UTF-8");
+
+    // get text from field_references and prepare it for DOI service
+    $ref_string = $entity->get('field_references')->value;
+
+    if (empty($ref_string)) {
+      return;
+    }
+
+    $ref_string = str_replace("\r\n", "\n", $ref_string);
+
+    $ref_array = explode("\n", $ref_string);
+    $ref_array = array_values(array_filter($ref_array));
+    $ref_array_numbered = $ref_array;
+    
+    for ($i = 1; $i < count($ref_array)+1; $i++)  {
+      $ref_array_numbered[$i-1] = '['.$i.'] '.$ref_array[$i-1];
+    }
+
+    $ref_string = implode("\n\n",$ref_array_numbered);
+
+
+    // create new temporary text file
+    $tmp_filename = tempnam("/tmp", "dkff_ref");    
+    $tmp_file = fopen($tmp_filename, "w") or die("Cannot open file");
+    fwrite($tmp_file, $ref_string);
+    fclose($tmp_file);
+
+    $host = 'localhost'; 
+    $port = 5000; 
+    $waitTimeoutInSeconds = 1; 
+    if(!$fp = fsockopen($host,$port,$errCode,$errStr,$waitTimeoutInSeconds)){   
+      \Drupal::logger('digitalia_muni_references')->warning('Application for DOI lookup is not running.');
+      return;
+    } 
+    fclose($fp);
+
+    // call DOI service and decode result JSON
+    $command = escapeshellcmd('python3 /home/islandora/bachelor-thesis/client.py -t_doi '.$tmp_filename);
+    $output = shell_exec($command);
+    $output_ar = explode("]",$output);
+    array_pop($output_ar);
+    $ref = implode("]", $output_ar).']';
+    $ref = strstr($ref, '[');
+    $ref = '{"ref": '.$ref.'}';
+    $ref = stripslashes($ref);
+    $json_obj = json_decode($ref, true);
+
+    // check for new DOIs and add them to the field
+    for ($i = 0; $i < count($json_obj['ref']); $i++)  {
+
+      $line = $ref_array[$i];
+      $exploded = explode("| doi",$line);
+      if (count($exploded) <= 1 and $json_obj['ref'][$i]['doi']) {
+        $doi = $json_obj['ref'][$i]['doi']; 
+        $ref_array[$i] = $line.' | doi:'.$doi;
+        $messenger = \Drupal::messenger();
+        $messenger->addMessage('Added DOI '.$doi.' for '.$line, $messenger::TYPE_STATUS);
+        \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': Added DOI '.$doi.' for '.$line);
+      }
+    }
+
+    $result_text = implode("\n\n", $ref_array);
+    $entity->set('field_references', $result_text);    
+  }
+}
