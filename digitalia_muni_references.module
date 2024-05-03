@@ -73,7 +73,7 @@ function digitalia_muni_references_lookup(\Drupal\Core\Entity\EntityInterface $e
       $subject = 'Application for DOI lookup is not running.';
       \Drupal::logger('digitalia_muni_references')->warning($subject);
 
-      $to = \Drupal::config('system.site')->get('mail');
+      $to = 'root@localhost';
       $mailManager = \Drupal::service('plugin.manager.mail');
       $params = [
         'subject' => t($subject),
