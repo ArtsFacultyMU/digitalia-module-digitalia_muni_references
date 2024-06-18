@@ -46,15 +46,11 @@ function digitalia_muni_references_submit(&$form, \Drupal\Core\Form\FormStateInt
   }
 }
 
-function digitalia_muni_references_node_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+function digitalia_muni_references_entity_update(\Drupal\Core\Entity\EntityInterface $entity) {
+  return;
   $content_types = array('references_test', 'article', 'book', 'chapter');
   if (in_array($entity->getType(), $content_types)) {
-    if ($entity->isPublished()) {
-
-      if ($entity->original and $entity->original->isPublished()) {
-        return;
-      }
-
+    if ($entity->isPublished() && (!$entity->original || !$entity->original->isPublished())) {
       digitalia_muni_references_lookup($entity);
     }
   }
@@ -138,7 +134,8 @@ function digitalia_muni_references_lookup(\Drupal\Core\Entity\EntityInterface $e
     }
     \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': Finished lookup.');
     $result_text = implode("\n\n", $ref_array);
-    $entity->set('field_references', $result_text);    
+    $entity->set('field_references', $result_text);
+    $entity->save();
   }
 }
 
