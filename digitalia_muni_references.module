@@ -13,7 +13,7 @@ use Drupal\Core\Messenger;
  */
 
 function digitalia_muni_references_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  $forms = ['node_article_edit_form', 'node_article_form', 'node_chapter_edit_form', 'node_chapter_form', 'node_book_form', 'node_book_edit_form', 'node_references_test_form', 'node_references_test_edit_form'];
+  $forms = ['node_article_edit_form', 'node_article_form', 'node_chapter_edit_form', 'node_chapter_form', 'node_book_form', 'node_book_edit_form', 'node_references_test_edit_form', 'node_references_test_form'];
   if (in_array($form_id, $forms)) {
     $form['digitalia_muni_references_set'] = [
       '#type' => 'fieldset',
