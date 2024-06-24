@@ -13,7 +13,7 @@ use Drupal\Core\Messenger;
  */
 
 function digitalia_muni_references_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  $forms = ['node_article_edit_form', 'node_article_form', 'node_chapter_edit_form', 'node_chapter_form', 'node_book_form', 'node_book_edit_form'];
+  $forms = ['node_article_edit_form', 'node_article_form', 'node_chapter_edit_form', 'node_chapter_form', 'node_book_form', 'node_book_edit_form', 'node_references_test_form', 'node_references_test_edit_form'];
   if (in_array($form_id, $forms)) {
     $form['digitalia_muni_references_set'] = [
       '#type' => 'fieldset',
@@ -38,20 +38,15 @@ function digitalia_muni_references_submit(&$form, \Drupal\Core\Form\FormStateInt
     $content_types = array('references_test', 'article', 'book', 'chapter');
     $entity = $form_state->getFormObject()->getEntity();
 
+    // Run DOI lookup if user checked the 'DOI lookup' checkbox, or if the node was just published.
     if (in_array($entity->getType(), $content_types)) {
       if ($form['digitalia_muni_references_set']['digitalia_muni_references']['#value'] == 1) {
         digitalia_muni_references_lookup($entity);
       }
-    }
-  }
-}
 
-function digitalia_muni_references_entity_update(\Drupal\Core\Entity\EntityInterface $entity) {
-  return;
-  $content_types = array('references_test', 'article', 'book', 'chapter');
-  if (in_array($entity->getType(), $content_types)) {
-    if ($entity->isPublished() && (!$entity->original || !$entity->original->isPublished())) {
-      digitalia_muni_references_lookup($entity);
+      if ($entity->isPublished() && (!$entity->original || !$entity->original->isPublished())) {
+        digitalia_muni_references_lookup($entity);
+      }
     }
   }
 }
