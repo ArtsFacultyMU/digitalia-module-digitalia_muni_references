@@ -44,8 +44,11 @@ function digitalia_muni_references_submit(&$form, \Drupal\Core\Form\FormStateInt
         digitalia_muni_references_lookup($entity);
       }
 
-      if ($entity->isPublished() && (!$entity->original || !$entity->original->isPublished())) {
-        digitalia_muni_references_lookup($entity);
+      if ($entity->isPublished()) {
+        $original_node = Drupal\node\Entity\Node::load($entity->id());
+        if ($original_node && !$original_node->isPublished()) {
+          digitalia_muni_references_lookup($entity);
+        }
       }
     }
   }
