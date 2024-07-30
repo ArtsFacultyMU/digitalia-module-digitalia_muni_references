@@ -122,12 +122,16 @@ function digitalia_muni_references_lookup(\Drupal\Core\Entity\EntityInterface $e
 
       $line = $ref_array[$i];
       $exploded = explode("| doi",$line);
-      if (count($exploded) <= 1 and $json_obj['ref'][$i]['doi']) {
-        $doi = $json_obj['ref'][$i]['doi']; 
-        $ref_array[$i] = $line.' | doi:'.$doi;
+      if (count($exploded) <= 1 and $doi = $json_obj['ref'][$i]['doi']) {
         $messenger = \Drupal::messenger();
-        $messenger->addMessage('Added DOI '.$doi.' for '.$line, $messenger::TYPE_STATUS);
-        \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': Added DOI '.$doi.' for '.$line);
+        // check if the line contains the doi already
+        if (stripos($line, $doi) !== false) {
+          $messenger->addMessage('DOI '.$doi.' already present in '.$line, $messenger::TYPE_STATUS);          
+        } else {
+          $ref_array[$i] = $line.' | doi:'.$doi;
+          $messenger->addMessage('Added DOI '.$doi.' for '.$line, $messenger::TYPE_STATUS);
+          \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': Added DOI '.$doi.' for '.$line);
+        }
       }
     }
     \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': Finished lookup.');
