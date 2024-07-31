@@ -121,19 +121,25 @@ function digitalia_muni_references_lookup(\Drupal\Core\Entity\EntityInterface $e
     for ($i = 0; $i < count($json_obj['ref']); $i++)  {
 
       $line = $ref_array[$i];
-      $exploded = explode("| doi",$line);
-      if (count($exploded) <= 1 and $doi = $json_obj['ref'][$i]['doi']) {
+      // remove old DOIs
+      $line = explode("| doi", $line)[0];
+
+      if ($doi = $json_obj['ref'][$i]['doi']) {
         $messenger = \Drupal::messenger();
-        // check if the line contains the doi already
+
+        // check if the line contains the DOI already
         if (stripos($line, $doi) !== false) {
           $messenger->addMessage('DOI '.$doi.' already present in '.$line, $messenger::TYPE_STATUS);          
         } else {
-          $ref_array[$i] = $line.' | doi:'.$doi;
+          $line = $line.' | doi:'.$doi;
           $messenger->addMessage('Added DOI '.$doi.' for '.$line, $messenger::TYPE_STATUS);
           \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': Added DOI '.$doi.' for '.$line);
         }
       }
+
+      $ref_array[$i] = $line;
     }
+
     \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': Finished lookup.');
     $result_text = implode("\n\n", $ref_array);
     $entity->set('field_references', $result_text);
