@@ -122,7 +122,7 @@ function digitalia_muni_references_lookup(\Drupal\Core\Entity\EntityInterface $e
 
       $line = $ref_array[$i];
       // remove old DOIs
-      $line = explode("| doi", $line)[0];
+      $line = explode(" | doi", $line)[0];
 
       if ($doi = $json_obj['ref'][$i]['doi']) {
         $messenger = \Drupal::messenger();
