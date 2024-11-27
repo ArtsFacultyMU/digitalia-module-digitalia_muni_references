@@ -125,16 +125,10 @@ function digitalia_muni_references_lookup(\Drupal\Core\Entity\EntityInterface $e
       $line = explode(" | doi", $line)[0];
 
       if ($doi = $json_obj['ref'][$i]['doi']) {
+        $line = $line.' | doi:'.$doi;
         $messenger = \Drupal::messenger();
-
-        // check if the line contains the DOI already
-        if (stripos($line, $doi) !== false) {
-          $messenger->addMessage('DOI '.$doi.' already present in '.$line, $messenger::TYPE_STATUS);          
-        } else {
-          $line = $line.' | doi:'.$doi;
-          $messenger->addMessage('Added DOI '.$doi.' for '.$line, $messenger::TYPE_STATUS);
-          \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': Added DOI '.$doi.' for '.$line);
-        }
+        $messenger->addMessage('Added DOI '.$doi.' for '.$line, $messenger::TYPE_STATUS);
+        \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': Added DOI '.$doi.' for '.$line);
       }
 
       $ref_array[$i] = $line;
