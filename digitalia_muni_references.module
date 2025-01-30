@@ -67,11 +67,11 @@ function digitalia_muni_references_lookup(\Drupal\Core\Entity\EntityInterface $e
       $subject = 'Application for DOI lookup is not running.';
       \Drupal::logger('digitalia_muni_references')->warning($subject);
 
-      $to = 'root@localhost';
+      $to = 'digitalia@phil.muni.cz';
       $mailManager = \Drupal::service('plugin.manager.mail');
       $params = [
         'subject' => t($subject),
-        'body' => t(''),
+        'body' => t('TEST'),
       ];
       $mailManager->mail('digitalia_muni_references', 'doi_app_not_running', $to, 'en', $params);
       return;
