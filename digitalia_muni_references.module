@@ -108,7 +108,9 @@ function digitalia_muni_references_lookup(\Drupal\Core\Entity\EntityInterface $e
 
     // call DOI service and decode result JSON
     $command = escapeshellcmd('python3 /home/islandora/bachelor-thesis/client.py -t_doi '.$tmp_filename);
+    \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': Calling DOI service...');
     $output = shell_exec($command);
+    \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': Processing output...');
     $output_ar = explode("]",$output);
     array_pop($output_ar);
     $ref = implode("]", $output_ar).']';
@@ -117,6 +119,7 @@ function digitalia_muni_references_lookup(\Drupal\Core\Entity\EntityInterface $e
     $ref = stripslashes($ref);
     $json_obj = json_decode($ref, true);
 
+    \Drupal::logger('digitalia_muni_references')->notice($entity->getType().' '.$entity->id().': '.count($json_obj['ref'])); 
     // check for new DOIs and add them to the field
     for ($i = 0; $i < count($json_obj['ref']); $i++)  {
 
