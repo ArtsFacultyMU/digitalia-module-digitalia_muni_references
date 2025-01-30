@@ -98,7 +98,7 @@ function digitalia_muni_references_lookup(\Drupal\Core\Entity\EntityInterface $e
       $ref_array_numbered[$i-1] = '['.$i.'] '.$ref_array[$i-1];
     }
 
-    $ref_string = implode("\n\n",$ref_array_numbered);
+    $ref_string = implode("\n",$ref_array_numbered);
 
     // create new temporary text file
     $tmp_filename = tempnam("/tmp", "dkff_ref");    
