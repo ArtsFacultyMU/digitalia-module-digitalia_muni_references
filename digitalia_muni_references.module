@@ -64,16 +64,13 @@ function digitalia_muni_references_lookup(\Drupal\Core\Entity\EntityInterface $e
     $port = 5000;
     $waitTimeoutInSeconds = 1;
     if(!$fp = fsockopen($host,$port,$errCode,$errStr,$waitTimeoutInSeconds)){
+
       $subject = 'Application for DOI lookup is not running.';
+
       \Drupal::logger('digitalia_muni_references')->warning($subject);
 
-      $to = 'digitalia@phil.muni.cz';
-      $mailManager = \Drupal::service('plugin.manager.mail');
-      $params = [
-        'subject' => t($subject),
-        'body' => t('TEST'),
-      ];
-      $mailManager->mail('digitalia_muni_references', 'doi_app_not_running', $to, 'en', $params);
+      \Drupal::service('plugin.manager.mail')->mail('digitalia_muni_references', 'doi_app_not_running', 'digitalia@phil.muni.cz', 'en', ['subject' => $subject, 'body' => 'TEST']);
+
       return;
     }
     fclose($fp);
